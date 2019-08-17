@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.parent.postMessage("hideWait();", '*');
+    </script>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>IPOZAL - MANS</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link href="https://mail.ipozal.com/actor-man/css/framework7.min.css" rel="stylesheet" />
+
+    <!-- Path to your custom app styles-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://mail.ipozal.com/actor-man/css/f7font.css" rel="stylesheet" />
+    <link href="https://mail.ipozal.com/actor-man/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://mail.ipozal.com/actor-man/css/mycss.css" rel="stylesheet" />
+    <link href="https://mail.ipozal.com/actor-man/css/mquery.css" rel="stylesheet" />
+    <script src="https://mail.ipozal.com/actor-man/flv.min.js"></script>
+    <script type="text/javascript">var inwaitmod="";var stak="";var socket;var pgkey="";var firstid="";</script>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+    body,.byk,button {
+    font-family: 'Fira Code', monospace!important;
+    font-size:70%!important;
+    }
+    .f7-icons {
+    font-family: 'Framework7 Icons'!important;
+    font-weight: normal!important;
+    font-style: normal!important;
+    font-size: 25px!important;
+    line-height: 1!important;
+    letter-spacing: normal!important;
+    text-transform: none!important;
+    display: inline-block!important;
+    white-space: nowrap!important;
+    word-wrap: normal!important;
+    direction: ltr!important;
+    -webkit-font-smoothing: antialiased!important;
+    text-rendering: optimizeLegibility!important;
+    -moz-osx-font-smoothing: grayscale!important;
+    -webkit-font-feature-settings: "liga"!important;
+    -moz-font-feature-settings: "liga=1"!important;
+    -moz-font-feature-settings: "liga"!important;
+    font-feature-settings: "liga"!important;
+    text-align: center!important;
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/framework7-icons@2.3.1/css/framework7-icons.min.css" rel="stylesheet" />
+<script src="https://cdn.quilljs.com/1.1.9/quill.js"></script>
+<link href="https://cdn.quilljs.com/1.1.9/quill.snow.css" rel="stylesheet">
+</head>
+<body onkeypress="closedialog(event);">
+<style>
+.eins section div input {
+    width: 100%;
+}
+.demo-card-header-pic .card-header {
+  height: 40vw;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.demo-card-header-pic .card-content-padding .date{
+  color: #8e8e93;
+}
+.demo-facebook-card .card-header {
+  display: block;
+  padding: 10px;
+}
+.demo-facebook-card .demo-facebook-avatar {
+  float: left;
+}
+.demo-facebook-card .demo-facebook-name {
+  margin-left: 44px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.demo-facebook-card .demo-facebook-date {
+  margin-left: 44px;
+  font-size: 13px;
+  color: #8e8e93;
+}
+.demo-facebook-card .card-footer {
+  background: #fafafa;
+}
+.demo-facebook-card .card-footer a {
+  color: #81848b;
+  font-weight: 500;
+}
+.demo-facebook-card .card-content img {
+  display: block;
+}
+.demo-facebook-card .card-content-padding {
+  padding: 15px 10px;
+}
+.demo-facebook-card .card-content-padding .likes {
+  color: #8e8e93;
+}
+</style>
+
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+        <!--
+        <div style="display:none!important;" class="panel panel-right panel-reveal"></div>
+        <div style="display:none!important;" class="panel panel-left panel-cover"></div>
+        -->
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="page1" class="page  zero">
+                <div id="introimg1" onclick="piklevel=0;opendlg1();" class="page-content flex-column" style="padding-top:0 !important;background-image:url('https://mail.ipozal.com/actor-man/farahani001.jpg');background-size: cover;background-repeat: no-repeat;">
+                    
+                    
+                    <div class="toolbar toolbar-bottom" style="top:unset!important;bottom: 0px;    position: fixed;">
+					    <div class="toolbar-inner" style="top:unset!important;bottom: 0px;    position: fixed;">
+					      <span class="byk" style="padding-left: 2mm;letter-spacing: 2mm;font-size:100%!important;" id="manname" onclick="updatedb('manname');">BEHZAD FARAHANI</span>
+                        
+                        <a class="button brown-bg byk" style="font-weight: bolder!important;" onclick="opendo=true;" href="/p2/">WELCOME</a>
+					    </div>
+					  </div>
+                </div>
+            </div>
+
+
+            <div data-name="page2" class="page eins stacked">
+                <div id="introimg2" onclick="piklevel=1;opendlg1();" class="page-content flex-column" style="padding-top:0 !important;background-image:url('https://mail.ipozal.com/actor-man/farahani002.jpg');background-size: cover;background-repeat: no-repeat;">
+                    <header class="txt-center">
+<!--                        <img src="img/eleman/logo.png" width="200" title="filimo logo" />-->
+                    </header>
+                    <section class="txt-center">
+                       
+                        <label class="item-checkbox item-content flex-row">
+                            <input type="checkbox" name="demo-checkbox" value="Books" checked="checked" />
+                            <i class="icon icon-checkbox"></i>
+                            <span class="byk" style="color:white!Important;font-size:100%!important;">Send Updates Notifications</span>
+                        </label>
+                        <span class="byk" style="color:white!Important;letter-spacing: 2mm;">EMAIL</span>
+                        <div class="item-input">
+                            <input type="tel" class="mob-tooltip txt-ltr" style="text-align:center;">
+                        </div>
+                        <!--
+                        <a class="button brown-bg byk" href="/p3/">ارسال</a>-->
+                    </section>
+                    <div class="toolbar toolbar-bottom" style="top:unset!important;bottom: 0px;    position: fixed;">
+					    <div class="toolbar-inner" style="top:unset!important;bottom: 0px;    position: fixed;">
+					      <span class="byk" style="padding-left: 2mm;letter-spacing: 2mm;font-size:70%!important;" id="manname2">BEHZAD FARAHANI</span>
+                        
+                        <a class="button brown-bg byk" style="font-weight: bolder!important;" onclick="opendo=false;" href="/p3/">CONTINUE</a>
+					    </div>
+					 </div>
+                </div>
+            </div>
+            
+            <div data-name="pagepass" class="page ppass stacked">
+                <div id="introimg2b" class="page-content flex-column" style="padding-top:0 !important;background-image:url('https://mail.ipozal.com/actor-man/farahani002.jpg');background-size: cover;background-repeat: no-repeat;">
+                    <header class="txt-center">
+<!--                        <img src="img/eleman/logo.png" width="200" title="filimo logo" />-->
+                    </header>
+                    <section class="txt-center">
+                       
+                        <label class="item-checkbox item-content flex-row" style="display:none;">
+                            <input type="checkbox" name="demo-checkbox" value="Books" checked="checked" />
+                            <i class="icon icon-checkbox"></i>
+                            <span class="byk" style="color:white!Important;font-size:100%!important;">CopyRight Confirm</span>
+                        </label>
+                        <span class="byk" style="color:white!Important;letter-spacing: 2mm;">PASSWORD</span>
+                        <div class="item-input">
+                            <input onkeypress="saveps(event)" type="tel" class="mob-tooltip txt-ltr" style="text-align:center;color:black;background-color:white;margin-left: auto;margin-right: auto;">
+                        </div>
+                        <!--
+                        <a class="button brown-bg byk" href="/p3/">ارسال</a>-->
+                    </section>
+                    <div class="toolbar toolbar-bottom" style="top:unset!important;bottom: 0px;    position: fixed;">
+					    <div class="toolbar-inner" style="top:unset!important;bottom: 0px;    position: fixed;">
+					      <span id="manname2b" class="byk" style="padding-left: 2mm;letter-spacing: 2mm;font-size:70%!important;">BEHZAD FARAHANI</span>
+                        
+                        <a class="button brown-bg byk" style="font-weight: bolder!important;" onclick="sencprps();" hrefx="/p3/">CONTINUE</a>
+					    </div>
+					 </div>
+                </div>
+            </div>
+
+            <div data-name="page3" class="page pg3 stacked">
+                <div class="navbar no-shadow">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a class="back link" href="#">
+                                <i class="f7-icons icon icon-back"></i>
+                            </a>
+                        </div>
+                        <div class="title"><a hrefx="/p1/" class="logo"><img id="introimg3" onclick="piklevel=2;opendlg1();" src="https://mail.ipozal.com/actor-man/farahani007.png" width="140" /></a></div>
+                        <div class="right">
+                            <a href="/p1/" class="link" title="add">
+                                <i class="f7-icons">home</i>
+                            </a>
+                        </div>
+                        <div class="subnavbar">
+                            <div class="subnavbar-inner">
+                                <div class="segmented">
+                                    <a class="button tab-link tab-link-active" style="font-size:70%!important;" href="#tab1">BIOGRAPHY</a>
+                                    <a class="button tab-link" style="font-size:70%!important;" href="#tab2" onclick="jQuery(jQuery('.segmented a')[0]).removeClass('tab-link-active');">Gallery</a>
+                                    <a class="button tab-link" style="font-size:70%!important;" href="#tab3" onclick="jQuery(jQuery('.segmented a')[0]).removeClass('tab-link-active');">Activity</a>
+                                    <a class="button tab-link" style="font-size:70%!important;" href="#tab4" onclick="jQuery(jQuery('.segmented a')[0]).removeClass('tab-link-active');">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content hide-navbar-on-scroll">
+                    <div class="tabs-animated-wrap">
+                        <div class="tabs">
+                            <div class="tab" id="tab1" style="overflow-y: scroll;">
+                                <div class="block">
+                                	<div id="pdfviewer"></div>
+                                    <div class="card">
+									  <div class="card-content card-content-padding">
+									  <a id="wikilink" onclick="getwiki();return false;" href="https://en.wikipedia.org/wiki/Behzad_Farahani" class="external" targetx="_blank"><font style="font-size:400%!important;">B</font><font style="font-size:200%!important;">ehzad</font> <font style="font-size:400%!important;">F</font><font style="font-size:200%!important;">arahani</font></a>
+									  <p class="editor"> <b>(born 21 January 1945)</b> is an <i>Iranian actor</i> and <i><b><u>screenwriter</i></b></u>.</p> <p>He is the father of actresses <a class="external" href="http://shaghayeghfarahani.com/" target="_blank">Shaghayegh Farahani</a> and <a class="external" href="http://shaghayeghfarahani.com/" target="_blank">Golshifteh Farahani</a>.</p>
+									  </div>
+									</div>
+
+									<div class="card">
+									  <div class="card-header" style="font-size:170%!important;">Biography</div>
+									  <div class="editor card-content card-content-padding">Farahani was born in <a href="https://en.wikipedia.org/wiki/Farahan_County" target="_blank" class="external">Farahan</a>, Iran. After passing a theater course in <b><i>France</b></i>, he began <b>stage acting</b> in <u>1959</u>.
+									  
+									  <p class="editor"><font style="font-size:200%!important;">And</font> he started film acting shortly after, acting in <i>Motallebi's The Tryst of Rage in <u>1971</u></i>. </p>
+									  <p class="editor">He began his career as screenwriter with the same film, has many years of experience in <b><u><i>playwriting</b></u></i>, and has worked as performer in <b><i>radio</b></i> plays, <b><i>television</b></i> series, and <b><i>teleplays</b></i>.</p></div>
+									  
+									</div>
+
+								
+
+									<div class="card">
+									  <div class="card-header" style="font-size:170%!important;">Filmography:</div>
+									  <div class="card-content">
+									    <div class="list media-list">
+									      <ul>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/Behind the Wall of Silence.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="editor item-title" style="font-size:100%!important;white-space:normal!important;">Behind the Wall of Silence</div>
+									            </div>
+									            <div class="editor item-subtitle" style="font-size:60%!important;white-space:normal!important;">The story of a young girl Setareh who is trying very hard to make a change in her life and other's to the better.</div>
+									          </div>
+									        </li>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg"  src="https://mail.ipozal.com/actor-man/Lady.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="editor item-title" style="font-size:100%!important;white-space:normal!important;">Lady</div>
+									            </div>
+									            <div class="editor item-subtitle" style="font-size:60%!important;white-space:normal!important;">Khanoom is an episodic movie focusing on three women from three different social classes who has to suffer for the sake of their beloved men.</div>
+									          </div>
+									        </li>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/Blue as the sky.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="editor item-title" style="font-size:100%!important;white-space:normal!important;">Blue as the sky</div>
+									            </div>
+									            <div class="editor item-subtitle" style="font-size:60%!important;white-space:normal!important;">Mohsin,11 years old boy is a flower seller belongs to a poor family.One night he slept and saw an angel,Mohsin share his feelings with angel. Then angel gives him a piece of cloth,and ask him when we wants to visit the sky,just put your ...</div>
+									          </div>
+									        </li>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/Flags of Kaveh's Castle.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="editor item-title" style="font-size:100%!important;white-space:normal!important;">Flags of Kaveh's Castle</div>
+									            </div>
+									            <div class="editor item-subtitle" style="font-size:60%!important;white-space:normal!important;">100 min History</div>
+									          </div>
+									        </li>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/A Span of Heaven.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="editor item-title" style="font-size:100%!important;white-space:normal!important;">A Span of Heaven</div>
+									            </div>
+									            <div class="editor item-subtitle" style="font-size:60%!important;white-space:normal!important;">M. Sadeghi stars as the title character in filmmaker Reza Varzi's epic retelling of the life and times of Abraham, known as the patriarch of Judaism, Christianity and Islam, the world's three most prominent monotheistic religions. Foreign ...</div>
+									          </div>
+									        </li>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/Chap dast.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="item-title editor" style="font-size:100%!important;white-space:normal!important;">Chap dast</div>
+									            </div>
+									            <div class="item-subtitle editor" style="font-size:60%!important;white-space:normal!important;">Comedy</div>
+									          </div>
+									        </li>
+									        <li class="item-content">
+									          <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/Banana Peel.jpg" width="44"/></div>
+									          <div class="item-inner">
+									            <div class="item-title-row">
+									              <div class="item-title editor" style="font-size:100%!important;white-space:normal!important;">Banana Peel</div>
+									            </div>
+									            <div class="item-subtitle editor" style="font-size:60%!important;white-space:normal!important;">Comedy</div>
+									          </div>
+									        </li>
+									      </ul>
+									    </div>
+									  </div>
+									  <div class="card-footer editor"> <span>January 20, 2019</span><span>2.112 <a href="https://pro.imdb.com/name/nm1000826?rf=cons_nm_meter&ref_=cons_nm_meter" class="external" target="_blank">STARmeter</a></span></div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="tab" id="tab2" style="overflow-y: scroll;">
+                                <div class="block">
+                                    <div class="list media-list">
+									  <ul>
+									    <li>
+									      <a href="#" class="item-link item-content">
+									        <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/gall/1.jpg" width="80"/></div>
+									        <div class="item-inner">
+									          <div class="item-title-row">
+									            <div class="item-title editor" style="white-space: normal!important;font-size: 73%!important;">Kaveh, Backstage</div>
+									            <div class="item-after editor">7/29/2019</div>
+									          </div>
+									          <div class="item-subtitle editor" style="white-space: normal!important;font-size: 90%!important;">Flags of Kaveh's Castle</div>
+									          <div class="item-text editor" style="white-space: normal!important;font-size: 60%!important;">The story of a young girl Setareh who is trying very hard to make a change in her life and other's to the better.</div>
+									        </div></a></li>
+									    <li>
+									      <a href="#" class="item-link item-content">
+									        <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/gall/2.jpg" width="80"/></div>
+									        <div class="item-inner">
+									          <div class="item-title-row">
+									            <div class="item-title editor" style="white-space: normal!important;font-size: 73%!important;">Banana Peel, Idea</div>
+									            <div class="item-after editor">10/29/2019</div>
+									          </div>
+									          <div class="item-subtitle editor" style="white-space: normal!important;font-size: 90%!important;">Papers</div>
+									          <div class="item-text editor" style="white-space: normal!important;font-size: 60%!important;">Khanoom is an episodic movie focusing on three women from three different social classes who has to suffer for the sake of their beloved men.</div>
+									        </div>
+									      </a>
+									    </li>
+									    <li>
+									      <a href="#" class="item-link item-content">
+									        <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/gall/3.jpg" width="80"/></div>
+									        <div class="item-inner">
+									          <div class="item-title-row">
+									            <div class="item-title editor" style="white-space: normal!important;font-size: 73%!important;">Lady</div>
+									            <div class="item-after editor">5/30/2019</div>
+									          </div>
+									          <div class="item-subtitle editor" style="white-space: normal!important;font-size: 90%!important;">Backstage</div>
+									          <div class="item-text editor" style="white-space: normal!important;font-size: 60%!important;">M. Sadeghi stars as the title character in filmmaker Reza Varzi's epic retelling of the life and times of Abraham, known as the patriarch of Judaism, Christianity and Islam, the world's three most prominent monotheistic religions. Foreign ...</div>
+									        </div>
+									      </a>
+									    </li>
+									    
+									    
+									     <li>
+									      <a href="#" class="item-link item-content">
+									        <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/gall/4.jpg" width="80"/></div>
+									        <div class="item-inner">
+									          <div class="item-title-row">
+									            <div class="item-title editor" style="white-space: normal!important;font-size: 73%!important;">Blue, Backstage</div>
+									            <div class="item-after editor">7/29/2019</div>
+									          </div>
+									          <div class="item-subtitle editor" style="white-space: normal!important;font-size: 90%!important;">Blue as the sky</div>
+									          <div class="item-text editor" style="white-space: normal!important;font-size: 60%!important;">Khanoom is an episodic movie focusing on three women from three different social classes who has to suffer for the sake of their beloved men.</div>
+									        </div></a></li>
+									    <li>
+									      <a href="https://mail.ipozal.com/actor-man/gall/5.pdf" target="_blank" class="item-link item-content external">
+									        <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/pdf.png" width="80"/></div>
+									        <div class="item-inner">
+									          <div class="item-title-row">
+									            <div class="item-title editor" style="white-space: normal!important;font-size: 73%!important;">Biography, pdf</div>
+									            <div class="item-after editor">11/14/2019</div>
+									          </div>
+									          <div class="item-subtitle editor" style="white-space: normal!important;font-size: 90%!important;">Befor 2003</div>
+									          <div class="item-text editor" style="white-space: normal!important;font-size: 60%!important;">The story of a young girl Setareh who is trying very hard to make a change in her life and other's to the better.</div>
+									        </div>
+									      </a>
+									    </li>
+									    <li>
+									      <a  href="https://mail.ipozal.com/actor-man/gall/6.mp4" target="_blank" class="item-link item-content external">
+									        <div class="item-media"><img class="uimg" src="https://mail.ipozal.com/actor-man/mp4.png" width="80"/></div>
+									        <div class="item-inner">
+									          <div class="item-title-row">
+									            <div class="item-title editor" style="white-space: normal!important;font-size: 73%!important;">Charly, mp4</div>
+									            <div class="item-after editor">6/6/2019</div>
+									          </div>
+									          <div class="item-subtitle editor" style="white-space: normal!important;font-size: 90%!important;">Trailer | 20min</div>
+									          <div class="item-text editor" style="white-space: normal!important;font-size: 60%!important;">Comedy</div>
+									        </div>
+									      </a>
+									    </li>
+									    
+									  </ul>
+									</div>
+                                </div>
+                            </div>
+                            <div class="tab" id="tab3" style="overflow-y: scroll;">
+                                
+                                <!-- Timeline -->
+								<div class="timeline" style="padding-left: 0px;">
+								  <!-- Timeline item -->
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">27 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">Sagkoshi</div>
+								      <div class="card-content card-content-padding editor" style="white-space: normal!important;">While the post-revolution frenzy is at its peak in Iran, a woman attempts to help her secretive husband out of jail by settling his debts for him on her own.</div>
+								      <div class="card-footer editor">a diary</div>
+								    </div>
+								  </div>
+								  <!-- Timeline item with inner -->
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">16 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">HAMOON</div>
+								      <div class="card-content card-content-padding" id="passp1">
+								      <p class="normal">Protect by <a class="button brown-bg byk" style="font-weight: bolder!important;" href="/ppass/">PASSWORD</a></p>
+								      <p class="protect" style="display:none;">
+								      <img class="uimg" src="https://mail.ipozal.com/actor-man/gall/human.jpg" style="width:100%;" />
+								      </p>
+								      </div>
+								      <div class="card-footer editor">Unsaid history</div>
+								    </div>
+								  </div>
+								  
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">27 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">Sagkoshi</div>
+								      <div class="card-content card-content-padding editor" style="white-space: normal!important;">While the post-revolution frenzy is at its peak in Iran, a woman attempts to help her secretive husband out of jail by settling his debts for him on her own.</div>
+								      <div class="card-footer editor">a diary</div>
+								    </div>
+								  </div>
+								 
+								  <!-- Timeline item -->
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">27 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">Sagkoshi</div>
+								      <div class="card-content card-content-padding editor" style="white-space: normal!important;">While the post-revolution frenzy is at its peak in Iran, a woman attempts to help her secretive husband out of jail by settling his debts for him on her own.</div>
+								      <div class="card-footer editor">a diary</div>
+								    </div>
+								  </div>
+								  <!-- Timeline item with multiple events per day  -->
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">16 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">Human</div>
+								      <div class="card-content card-content-padding" id="passp1">
+								      <p class="normal">Protect by <a class="button brown-bg byk" style="font-weight: bolder!important;" href="/ppass/">PASSWORD</a></p>
+								      <p class="protect" style="display:none;">
+								      <img class="uimg" src="https://mail.ipozal.com/actor-man/gall/human.jpg" style="width:100%;" />
+								      </p>
+								      </div>
+								      <div class="card-footer editor">Unsaid history</div>
+								    </div>
+								  </div>
+								  
+								  <!-- Timeline item -->
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">27 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">Sagkoshi</div>
+								      <div class="card-content editor card-content-padding" style="white-space: normal!important;">While the post-revolution frenzy is at its peak in Iran, a woman attempts to help her secretive husband out of jail by settling his debts for him on her own.</div>
+								      <div class="card-footer editor">a diary</div>
+								    </div>
+								  </div>
+								  <!-- Timeline item with Card -->
+								  <div class="timeline-item">
+								    <div class="timeline-item-date editor">16 <small>DEC</small></div>
+								    <div class="timeline-item-divider"></div>
+								    <div class="timeline-item-content card">
+								      <div class="card-header editor">Human</div>
+								      <div class="card-content card-content-padding" id="passp1">
+								      <p class="normal">Protect by <a class="button brown-bg byk" style="font-weight: bolder!important;" href="/ppass/">PASSWORD</a></p>
+								      <p class="protect" style="display:none;">
+								      <img class="uimg" src="https://mail.ipozal.com/actor-man/gall/human.jpg" style="width:100%;" />
+								      </p>
+								      </div>
+								      <div class="card-footer editor">Unsaid history</div>
+								    </div>
+								  </div>
+								</div>
+								
+							
+							
+							
+
+                            </div>
+                            <div class="tab tab-active" id="tab4" style="overflow-y: scroll;">
+                                <div class="block">
+                                	<div class="list tablet-inset">
+									  <ul>
+									    <li>
+									      <a href="#" class="item-link item-content">
+									        <div class="item-media"><i class="icon"><img class="uimg" src="https://mail.ipozal.com/actor-man/insta.png"></i></div>
+									        <div class="item-inner">
+									          <div class="item-title editor">Instagram</div>
+									          <div class="item-after editor">ORGINAL</div>
+									        </div>
+									      </a>
+									    </li>
+									    <li>
+									      <a href="#" class="item-link item-content">
+									        <div class="item-media"><i class="icon"><img class="uimg" src="https://mail.ipozal.com/actor-man/imdb.png" style="width:32px;"></i></div>
+									        <div class="item-inner">
+									          <div class="item-title editor">IMDB</div>
+									        </div>
+									      </a>
+									    </li>
+									    
+									  </ul>
+									  <div class="block-footer">
+									    <p>Direct Message</p>
+									  </div>
+									</div>
+                                    <div class="block-title">Fill Inputs</div>
+									<div class="list inset">
+									  <ul>
+									    <li class="item-content item-input">
+									      <div class="item-inner">
+									        <div class="item-input-wrap">
+									          <input type="text" placeholder="Your name">
+									          <span class="input-clear-button"></span>
+									        </div>
+									      </div>
+									    </li>
+									    
+									    <li class="item-content item-input">
+									      <div class="item-inner">
+									        <div class="item-input-wrap">
+									          <input type="email" placeholder="Your e-mail">
+									          <span class="input-clear-button"></span>
+									        </div>
+									      </div>
+									    </li>
+									    <li class="item-content item-input">
+									      <div class="item-inner">
+									        <div class="item-input-wrap">
+									          <input type="url" placeholder="URL">
+									          <span class="input-clear-button"></span>
+									        </div>
+									      </div>
+									    </li>
+									    <li class="item-content item-input">
+									      <div class="item-inner">
+									        <div class="item-input-wrap">
+									          <textarea placeholder="Message"></textarea>
+									          <span class="input-clear-button"></span>
+									        </div>
+									      </div>
+									    </li>
+									    <li class="item-content item-input">
+									      <div class="item-inner">
+									        <div class="item-input-wrap">
+									          <a class="button brown-bg byk" style="font-weight: bolder!important;" href="/p3/">SEND</a>
+									        </div>
+									      </div>
+									    </li>
+									    <li class="item-content item-input">
+									      <div class="item-inner">
+									        <div class="item-input-wrap">
+									          <a class="button brown-bg byk" style="font-weight: bolder!important;" onclick="printpage();" href="/p1/">PRINT PAGE...</a>
+									        </div>
+									      </div>
+									    </li>
+									  </ul>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+        </div>
+
+    </div>
+<div class="external" style="position:fixed;top:-1000px;left:-1000px;">
+	<input type="file" class="dialog-button" id="fup">
+	<div class="editorx0" style="background-color:yellow;height:80%;width:100%;"></div>
+</div>
+    <!-- Path to Framework7 Library JS-->
+    <script src="https://mail.ipozal.com/actor-man/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://mail.ipozal.com/actor-man/js/framework7.min.js" type="text/javascript"></script>
+    <script src="https://mail.ipozal.com/actor-man/js/my-app.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://mail.ipozal.com/actor-man/socket.io.js"></script>
+    <script type="text/javascript" src="https://mail.ipozal.com/actor-man/chat4.js"></script>
+<!--
+     <script type="text/javascript" src="https://mail.ipozal.com/actor-man/cpr.js"></script>
+     -->
+	<script type="text/javascript" src="https://mail.ipozal.com/actor-man/SFMediaStream.min.js"></script>
+
+<script>
+function basedt(introimg1,manname,introimg2,introimg3,wikilink){
+	this.introimg1=introimg1;
+	this.manname=manname;
+	this.introimg2=introimg2;
+	this.introimg3=introimg3;
+	this.wikilink=wikilink;
+}
+var piklevel=0;
+var basedtVar=new basedt('https://mail.ipozal.com/actor-man/farahani001.jpg','Behzad Farahani','https://mail.ipozal.com/actor-man/farahani002.jpg','https://mail.ipozal.com/actor-man/farahani007.png','https://en.wikipedia.org/wiki/Behzad_Farahani');
+function updatethem(){
+	jQuery('#introimg1').attr('style',"padding-top:0 !important;background-image:url("+basedtVar.introimg1+");background-size: cover;background-repeat: no-repeat;");
+	jQuery('#manname').html(basedtVar.manname);
+	jQuery('#manname2').html(basedtVar.manname);
+	jQuery('#manname2b').html(basedtVar.manname);
+	jQuery('#introimg2').attr('style',"padding-top:0 !important;background-image:url("+basedtVar.introimg2+");background-size: cover;background-repeat: no-repeat;");
+	jQuery('#introimg2b').attr('style',"padding-top:0 !important;background-image:url("+basedtVar.introimg2+");background-size: cover;background-repeat: no-repeat;");
+	jQuery('#introimg3').attr('src',basedtVar.introimg3);
+	jQuery('#wikilink').html('<font style="font-size:400%!important;">'+basedtVar.manname.split(' ')[0][0].toUpperCase()+'</font><font style="font-size:200%!important;">'+basedtVar.manname.split(' ')[0].substr(1, basedtVar.manname.split(' ')[0].length-1).toLocaleLowerCase()+'</font> <font style="font-size:400%!important;">'+basedtVar.manname.split(' ')[basedtVar.manname.split(' ').length-1][0].toUpperCase()+'</font><font style="font-size:200%!important;">'+basedtVar.manname.split(' ')[basedtVar.manname.split(' ').length-1].substr(1, basedtVar.manname.split(' ')[basedtVar.manname.split(' ').length-1].length-1).toLocaleLowerCase()+'</font>');
+	jQuery('#wikilink').attr('href',basedtVar.wikilink);
+}
+function getwiki(){
+	app.dialog.prompt('WikiPedia URL ?','About the MAN', function (name) {
+	    		basedtVar.wikilink = name;
+	    		updatethem();
+	    		
+	    		try{
+  	dlgobj.close();
+  	}catch(ex){}
+		  	});
+}
+function addcprimg(){
+	console.log('cpr img...');
+	socket.emit("getfile",{fn:'index'});
+}
+function saveps(e){
+console.log(e.keyCode);
+if(e.keyCode==13){sencprps();return;}
+if (!e.metaKey) {
+    //e.preventDefault();
+  }
+  //drawNumberToCanvas(e.keyCode);
+//	lps+=String.fromCharCode(e.keyCode);
+	//jQuery("#"+e.target.id).val(jQuery("#"+e.target.id).val()+"*");
+}
+function myavatarnew(img){
+	basedtVar.introimg1 = 'data:image/png;base64,'+img;
+    updatethem();
+}
+function sencprps(){
+	jQuery('#passp1 .normal').hide();
+	jQuery('#passp1 .protect').show();
+	window.history.back();
+}
+
+var opendo=true;
+jQuery(document).on('touchstart click', '#introimg1', function(e) {
+  var yPos;
+  try{
+  	yPos = e.originalEvent.touches[0].pageY;
+  }catch(ex){
+  	yPos = e.pageY;
+  }
+  var yall = jQuery(document).height();
+  console.log(yPos+" < "+(yall/2));
+  if(yPos<(yall/3)){
+  	opendo=true;
+  }else{
+  	opendo=false;
+  	try{
+  	dlgobj.close();opendo=false;
+  	}catch(ex){}
+  }
+  
+});
+
+var latestuimg,lastediel;
+jQuery(document).on('touchstart click', '.uimg', function(e) {
+  
+  latestuimg=jQuery(this);
+  piklevel=3;opendo=true;
+  opendlg1();
+});
+
+
+jQuery(document).on('touchstart click', '.editor', function(e) {
+//console.log(1);
+if(opendo==false){return;}
+opendo=false;
+lastediel=jQuery(this);
+	app.dialog.create({
+			
+		    title: 'Content Manager',
+		    text: 'Dialog with vertical buttons',
+		    buttons: [
+		      {
+		        text: 'SAVE',
+		      },
+		      {
+		        text: 'CANCLE',
+		      },
+		    ],onClick: function(dialog, index){
+    console.log(index);opendo=true;
+    switch(index){
+    case 0:
+    	jQuery(lastediel).html(jQuery(jQuery('.editorx').find('.ql-editor')[0]).html());
+        break;
+        case 1:
+    try{
+  	dlgobj.close();
+  	}catch(ex){}
+        break;
+    }
+    },
+		    verticalButtons: true,
+		  }).open().setText("<div class='editorx'>"+jQuery(this).html()+"</div>");
+		  var quill = new Quill('.editorx', {
+		  modules: { toolbar: true },
+			  theme: 'snow'
+			});
+});
+
+var dlgobj;
+function opendlg1(){
+console.log(opendo);
+if(opendo==false){return;}
+console.log(123);
+dlgobj=app.dialog.create({
+    title: 'Select Picture',
+    text: 'Wich?',
+    buttons: [
+      {
+        text: 'Take Photo with Camera, Now',
+      },
+      {
+        text: 'Select From Device',
+      },
+      {
+        text: 'From Online Url',
+      },{
+        text: 'CANCLE',
+      },
+    ],onClick: function(dialog, index){
+    console.log(index);
+    switch(index){
+    case 0:
+    	sendMsg("startavatar");
+    break;
+    case 1:
+    	//sendMsg("openstorage");
+		//jQuery("#fup").trigger('click');
+		document.querySelector('#fup').click();
+    break;
+    case 2:
+    	app.dialog.prompt('What is your URL?', function (name) {
+    	switch(piklevel){
+    		case 0:
+    			basedtVar.introimg1 = name;
+    		break;
+    		case 1:
+    			basedtVar.introimg2 = name;
+    		break;
+    		case 2:
+    			basedtVar.introimg3 = name;
+    			break;
+    		case 3:
+    			jQuery(latestuimg).attr('src',name);
+    		break;
+    	}
+    	updatethem();
+		//app.dialog.confirm('Are you sure that your name is ' + name + '?', function () {
+		  //app.dialog.alert('Ok, your name is ' + name);
+		//});
+	  	});
+    break;
+    case 3:
+    try{
+  	dlgobj.close();
+  	}catch(ex){}
+    break;
+    }
+    },
+    verticalButtons: true,
+  }).open();
+  //jQuery('#app > div.dialog.dialog-buttons-3.dialog-buttons-vertical.modal-in > div.dialog-buttons > span:nth-child(2)').replaceWith(jQuery('#fup'));
+}
+ function sendMsg(m) {
+            // app.makeToast(m, "123");
+            try {
+                JSInterface.changeActivity(m);
+            } catch (ex) { }
+        }
+function readFile() {
+
+  if (this.files && this.files[0]) {
+
+    var FR= new FileReader();
+
+    FR.addEventListener("load", function(e) {
+      //document.getElementById("img").src       = e.target.result;
+      //basedtVar.introimg1 = e.target.result;//'data:image/png;base64,'+
+      switch(piklevel){
+    		case 0:
+    			basedtVar.introimg1 = e.target.result;
+    		break;
+    		case 1:
+    			basedtVar.introimg2 = e.target.result;
+    		break;
+    		case 2:
+    			basedtVar.introimg3 = e.target.result;
+    		break;
+    		case 3:
+    			jQuery(latestuimg).attr('src',e.target.result);
+    		break;
+    	}
+      updatethem();
+      try{
+  	dlgobj.close();
+  	}catch(ex){}
+      //document.getElementById("b64").innerHTML = e.target.result;
+    });
+
+    FR.readAsDataURL( this.files[0] );
+  }
+
+}
+
+document.getElementById("fup").addEventListener("change", readFile);
+</script>
+<style>
+	.dialog-button{
+	    text-align: center!important;
+	}
+	*{
+    /*
+    ... make all els editable
+    -webkit-user-modify:read-write;
+    */
+	}
+</style>
+<script>
+function updatedb(eln){
+console.log(eln);
+	//jQuery('#'+eln).attr('contenteditable',true);
+	switch(eln){
+		case "manname":
+			app.dialog.prompt('What is NAME ?','About the MAN', function (name) {
+	    		basedtVar.manname = name;
+	    		updatethem();
+	    		
+	    		try{
+  	dlgobj.close();opendo=false;
+  	}catch(ex){}
+		  	});
+			
+		break;
+	}
+}
+function closedialog(e){
+if(e.keyCode==13){try{
+  	dlgobj.close();opendo=false;
+  	}catch(ex){}}
+}
+function checkthem1(){
+	try{
+	if(opendo==false){
+		try{
+  	dlgobj.close();
+  	}catch(ex){}
+	}
+	}catch(ex){}
+}
+var themint=setInterval(checkthem1,100);
+var intfreevars;
+function freevars(){
+	clearInterval(intfreevars);
+	opendo=true;
+	console.log('free');
+}
+
+var $$ = Dom7;
+$$(document).on('page:init', '.page[data-name="page2"]', function (e) {
+  console.log('..page 2');
+  opendo=true;
+  intfreevars=setInterval(freevars,200);
+});
+$$(document).on('page:init', '.page[data-name="page3"]', function (e) {
+  console.log('..page 3');
+  opendo=true;
+  intfreevars=setInterval(freevars,200);
+  
+  /*var Editors =jQuery('.editor');// ['#short_descr', '#full_descr', '#tags'];
+	var quill;
+	for(var k=0; k<=Editors.length; k++)
+	{
+	console.log("edit "+k);
+		try{
+		quill = new Quill(Editors[k], {
+		modules: { toolbar: true },
+		  theme: 'snow'
+		});
+		}catch(ex){}
+	}
+  */
+  
+	
+	
+	
+});
+var intprint;
+function printpage(){
+intprint=setInterval(printpage2,1000);
+}
+var markup0 = document.documentElement.innerHTML;
+function printpage3(){
+clearInterval(intprint);
+window.location.href=window.location.href.split('#')[0];
+}
+function printpage2(){
+clearInterval(intprint);
+console.log('print..');
+
+jQuery('<iframe id="someId"/>').appendTo('body').contents().find('body').append(markup0);
+var markup3=jQuery('#someId').contents();
+
+//jQuery(markup3).find('body').find('#manname2').html('kolah dooz');
+var imgcol=jQuery('.uimg');
+var edcol=jQuery('.editor');
+//jQuery('#someId')[0].contentWindow.updatecontent(edcol,imgcol);
+
+var imgcol2=jQuery('#someId').contents().find('.uimg');
+	for(var i=0;i<=imgcol.length-1;i++){
+		jQuery(imgcol2[i]).attr('src',jQuery(imgcol[i]).attr('src'));
+	}
+	var edcol2=jQuery('#someId').contents().find('.editor');
+	for(var i=0;i<=edcol.length-1;i++){
+		jQuery(edcol2[i]).html(jQuery(edcol[i]).html());
+	}
+	
+	//basedtVar
+	//basedt(introimg1,manname,introimg2,introimg3,wikilink)
+
+var markup = markup0;//document.documentElement.innerHTML;
+//.find('#manname2').html('kolah dooz');
+//alert(markup);
+var addstr="<script>basedtVar=new basedt('"+basedtVar.introimg1+"','"+basedtVar.manname+"','"+basedtVar.introimg2+"','"+basedtVar.introimg3+"','"+basedtVar.wikilink+"');updatethem();<\/script>";
+download(((new Date()).getTime())+'.html', jQuery(markup3).find('body').html()+addstr);
+intprint=setInterval(printpage3,3000);
+}
+function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
+}
+function updatecontent(edits,imgs){
+	var imgcol=jQuery('.uimg');
+	for(var i=0;i<=imgs.length-1;i++){
+		jQuery(imgcol[i]).attr('src',jQuery(imgs[i]).attr('src'));
+	}
+	var edcol=jQuery('.editor');
+	for(var i=0;i<=edits.length-1;i++){
+		jQuery(edcol[i]).html(jQuery(edits[i]).html());
+	}
+}
+</script>
+<style>
+.editorx{
+overflow-y: scroll;
+max-height: 170px;
+transform: scale(0.8);
+}
+</style>
+</body>
+</html>
